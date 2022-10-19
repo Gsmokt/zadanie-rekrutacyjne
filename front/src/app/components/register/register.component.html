@@ -1,0 +1,68 @@
+<form
+  [formGroup]="registerForm"
+  (ngSubmit)="onSubmit()"
+  #formDirective="ngForm"
+>
+  <div>
+    <div>
+      <mat-label ngClass="mat-label" for="email">email</mat-label>
+    </div>
+    <mat-form-field appearance="outline">
+      <input #email matInput formControlName="email" type="text" />
+      <mat-icon *ngIf="!registerForm.controls['email'].errors" matSuffix
+        >done</mat-icon
+      >
+    </mat-form-field>
+    <mat-icon
+      *ngIf="
+        registerForm.controls['email'].errors &&
+        registerForm.controls['email'].dirty
+      "
+      #tooltip="matTooltip"
+      matTooltip="Adres email powinien zawierać identyfikator użytkownika, znak @ oraz pełną nazwę domeny serwera poczty, np. biuro@mojaﬁrma.pl."
+      matTooltipPosition="right"
+      matTooltipClass="mat-tool"
+      >error_outline</mat-icon
+    >
+  </div>
+  <div>
+    <div>
+      <mat-label ngClass="mat-label" for="password">hasło</mat-label>
+    </div>
+    <mat-form-field appearance="outline">
+      <input #password matInput formControlName="password" type="password" />
+      <mat-icon *ngIf="!registerForm.controls['password'].errors" matSuffix
+        >done</mat-icon
+      >
+    </mat-form-field>
+    <mat-icon
+      *ngIf="
+        registerForm.controls['password'].errors &&
+        registerForm.controls['password'].dirty
+      "
+      #tooltip="matTooltip"
+      matTooltip="Hasło musi składać się minimum 1 cyfry, 1 małej litery, 1 dużej litery i co najmniej 8 znaków."
+      matTooltipPosition="right"
+      matTooltipClass="mat-tool"
+      >error_outline</mat-icon
+    >
+    <div class="mat mat-password-strength">
+      <mat-password-strength [password]="password.value">
+      </mat-password-strength>
+    </div>
+  </div>
+  <div>
+    <div>
+      <mat-label ngClass="mat-label" for="passwordConfirm">hasło</mat-label>
+    </div>
+    <mat-form-field appearance="outline">
+      <input
+        #passwordConfirm
+        matInput
+        formControlName="passwordConfirm"
+        type="password"
+      />
+    </mat-form-field>
+  </div>
+  <button ngClass="mat mat-button" mat-button type="submit">Załóż konto</button>
+</form>

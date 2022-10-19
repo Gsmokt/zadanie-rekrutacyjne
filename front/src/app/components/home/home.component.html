@@ -1,0 +1,23 @@
+<div class="main-container">
+  <div class="form-container">
+    <nav mat-tab-nav-bar>
+      <a
+        mat-tab-link
+        routerLink="login"
+        routerLinkActive="active-link"
+        #rla="routerLinkActive"
+        [active]="rla.isActive"
+        >Login
+      </a>
+      <a
+        mat-tab-link
+        routerLink="register"
+        routerLinkActive="active-link"
+        #rl="routerLinkActive"
+        [active]="rl.isActive"
+        >Register
+      </a>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>
+</div>

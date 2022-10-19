@@ -1,0 +1,33 @@
+<div class="form-container">
+  <p class="form-label">Zresetuj hasło</p>
+  <form
+    [formGroup]="registerForm"
+    (ngSubmit)="onSubmit()"
+    #formDirective="ngForm"
+    *ngIf="!viewChange; else response"
+  >
+    <div>
+      <div>
+        <mat-label ngClass="mat-label" for="email">email</mat-label>
+      </div>
+      <mat-form-field appearance="outline">
+        <input #password matInput formControlName="email" type="text" />
+      </mat-form-field>
+      <mat-icon
+        *ngIf="registerForm.controls['email'].dirty && !submitted"
+        #tooltip="matTooltip"
+        matTooltip="Na podany email zostanie wysłany link do zresetowania hasła."
+        matTooltipPosition="right"
+        matTooltipClass="mat-tool"
+        >help_outline</mat-icon
+      >
+    </div>
+    <button ngClass="mat mat-button" mat-button type="submit">
+      Wpisz email
+    </button>
+  </form>
+</div>
+
+<ng-template #response>
+  <p>{{ responseMessage?.msg }}</p>
+</ng-template>

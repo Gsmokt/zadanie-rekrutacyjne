@@ -1,0 +1,41 @@
+.btn-clear{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.mat-label{
+    color: #7B8185;
+}
+
+.mat-hint{
+    color: #7B8185;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.mat-button{
+    background-color: #2D2D2D;
+    color: white;
+    border-radius: 0px;
+    padding: 0px 30px;
+    margin-top: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mat-form-field{
+    position: relative;
+}
+
+.mat-icon{
+    position: absolute;
+    transform: translate(-15px,-25px);
+}
+
+

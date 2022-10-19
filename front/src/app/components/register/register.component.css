@@ -1,0 +1,38 @@
+.mat-icon{
+    margin-left: 10px;
+    position: absolute;
+    transform: translateY(15px);
+}
+.mat-tool{
+    border: 1px solid black;
+    border-radius: 0px !important;
+    background-color: white;
+    color: black !important;
+}
+
+.mat-password-strength{
+    width: 100px;
+}
+
+.mat-label{
+    color: #7B8185;
+}
+
+.mat-button{
+    background-color: #2D2D2D;
+    color: white;
+    border-radius: 0px !important;
+    padding: 0px 30px !important;
+    margin-top: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mat-form-field{
+    position: relative;
+}
+

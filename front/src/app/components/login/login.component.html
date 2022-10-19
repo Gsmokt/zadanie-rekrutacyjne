@@ -1,0 +1,43 @@
+<form
+  [formGroup]="registerForm"
+  (ngSubmit)="onSubmit()"
+  #formDirective="ngForm"
+>
+  <div>
+    <div>
+      <mat-label ngClass="mat-label" for="password">hasło</mat-label>
+    </div>
+    <mat-form-field appearance="outline">
+      <input #password matInput formControlName="password" type="password" />
+      <mat-icon
+        style="cursor: pointer"
+        matSuffix
+        *ngIf="password.value !== ''"
+        (click)="password.value = ''"
+      >
+        clear
+      </mat-icon>
+    </mat-form-field>
+  </div>
+  <div>
+    <div>
+      <mat-label ngClass="mat-label" for="email">email</mat-label>
+    </div>
+    <mat-form-field appearance="outline">
+      <input #email matInput formControlName="email" type="text" />
+      <mat-icon
+        style="cursor: pointer"
+        matSuffix
+        *ngIf="email.value !== ''"
+        (click)="email.value = ''"
+      >
+        clear
+      </mat-icon>
+      <mat-hint align="end" ngClass="mat mat-hint" routerLink="/reset">
+        zresetuj hasło
+      </mat-hint>
+    </mat-form-field>
+  </div>
+  <small>{{ responseMessage?.msg }}</small>
+  <button ngClass="mat mat-button" mat-button type="submit">Zaloguj</button>
+</form>
